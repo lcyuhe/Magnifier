@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>放大镜</title>
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+    <script src="js/jquery.zoombie.js"></script>
+    <style>
+        .dd {
+            /*margin: 20px auto;*/
+        }
+
+        .magnifier_div_boss {
+            width: 406px;
+            height: 406px;
+            display: table-cell;
+            font-size: 0;
+            text-align: center;
+            vertical-align: middle;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            background-color: rgb(200,200,200);
+            margin-right: 50px;
+        }
+
+        .magnifier_img_boss {
+            text-align: center;
+            vertical-align: middle;
+            width: 406px;
+            font-size: 0;
+            cursor: none;
+        }
+
+        .big_img {
+            max-width: 406px;
+            max-height: 406px;
+            margin: 0 auto;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="magnifier_div_boss">
+        <div id="big_img1" class="magnifier_img_boss">
+            <img id="img1" class="big_img" src="images/Penguins.jpg">
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            $("#img1").removezoombieLens();
+            $("#img1").zoombieLens({ parentId: 'big_img1' });
+        });
+    </script>
+</body>
+</html>
